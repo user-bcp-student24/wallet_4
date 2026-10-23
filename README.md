@@ -38,7 +38,9 @@ La bienvenida muestra una wallet de ejemplo, saldo cero y movimientos ficticios,
 
 ## Arquitectura de referencia
 
-El diagrama presenta la arquitectura de referencia, con W1 como alcance actual y W2 como siguiente etapa técnica. Para el detalle funcional del recorrido completo —incluidos revisión KYC y pago QR— consulta [DiagramaOnBoarding_Pago.md](DiagramaOnBoarding_Pago.md). La pantalla HTML mostrada arriba no está conectada al mock ni a un backend.
+El diagrama presenta la arquitectura de referencia, con W1 como alcance actual y W2 como siguiente etapa técnica. Haz clic en la imagen para abrir [DiagramaOnBoarding_Pago.md](DiagramaOnBoarding_Pago.md), donde se detalla el flujo funcional de onboarding, revisión KYC y pago QR. La pantalla HTML mostrada arriba no está conectada al mock ni a un backend.
+
+[![Arquitectura de referencia W1 y W2; abrir el flujo funcional](arquitectura-w1-w2.svg)](DiagramaOnBoarding_Pago.md)
 
 ## Objetivo del MVP
 

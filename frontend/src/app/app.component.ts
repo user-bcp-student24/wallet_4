@@ -20,10 +20,18 @@ interface Movement {
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  // Datos demostrativos que se reemplazarán al conectar autenticación y backend.
-  readonly userName = 'María Fernanda';
+  isLoggedIn = false;
+  userName = 'María Fernanda';
   readonly balance = 2450.8;
   readonly today = new Date();
+
+  get userInitials(): string {
+    return this.userName
+      .split(/\s+/)
+      .slice(0, 2)
+      .map((part) => part.charAt(0).toUpperCase())
+      .join('');
+  }
 
   // Movimientos de ejemplo: incoming distingue abonos de pagos en la presentación.
   readonly movements: Movement[] = [
@@ -54,6 +62,21 @@ export class AppComponent {
   ];
 
   activeAction = '';
+
+  completeOnboarding(event: Event, form: HTMLFormElement): void {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+
+    const fullName = new FormData(form).get('fullName')?.toString().trim() ?? '';
+    this.userName = fullName.split(/\s+/)[0] || 'Usuario';
+    this.isLoggedIn = true;
+  }
+
+  restartDemo(): void {
+    this.isLoggedIn = false;
+    this.userName = 'María Fernanda';
+    this.activeAction = '';
+  }
 
   /** Muestra un aviso para indicar que las acciones aún no están conectadas. */
   selectAction(action: string): void {

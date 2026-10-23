@@ -110,6 +110,224 @@ main {
   padding: 38px 0 54px;
 }
 
+.demo-label {
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.onboarding-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.82fr);
+  align-items: center;
+  gap: 72px;
+  padding: 56px 0 72px;
+}
+
+.onboarding-intro {
+  max-width: 570px;
+}
+
+.onboarding-intro .eyebrow {
+  color: var(--green);
+  font-size: 10px;
+  letter-spacing: 1.7px;
+}
+
+.onboarding-intro h1 {
+  max-width: 540px;
+  margin: 0 0 16px;
+  font-size: 42px;
+  line-height: 1.16;
+  letter-spacing: -1.2px;
+}
+
+.onboarding-intro .welcome-subtitle {
+  max-width: 460px;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.onboarding-steps {
+  display: grid;
+  gap: 14px;
+  margin-top: 38px;
+}
+
+.onboarding-step {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #8b9690;
+}
+
+.onboarding-step > span,
+.form-step-label > span:first-child {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e9eee9;
+  color: #68776e;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.onboarding-step.is-current > span,
+.form-step-label > span:first-child {
+  background: var(--green);
+  color: var(--lime);
+}
+
+.onboarding-step div {
+  display: grid;
+  gap: 3px;
+}
+
+.onboarding-step strong {
+  color: #34463c;
+  font-size: 13px;
+}
+
+.onboarding-step small {
+  color: #929d96;
+  font-size: 11px;
+}
+
+.onboarding-panel {
+  padding: 30px;
+  border: 1px solid #e5ebe6;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 12px 34px #203b2d0b;
+}
+
+.form-step-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+  color: #829087;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.form-step-label > span:first-child {
+  width: 30px;
+  height: 30px;
+}
+
+.onboarding-panel h2 {
+  margin-bottom: 8px;
+  font-size: 22px;
+}
+
+.form-description,
+.demo-disclaimer {
+  color: #84918a;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.form-description {
+  margin-bottom: 24px;
+}
+
+.onboarding-field {
+  display: grid;
+  gap: 7px;
+  margin-bottom: 16px;
+}
+
+.onboarding-field label {
+  color: #46584e;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.onboarding-field input {
+  width: 100%;
+  min-width: 0;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid #dce4dd;
+  border-radius: 6px;
+  background: #fff;
+  color: #26382e;
+  font: inherit;
+  font-size: 12px;
+}
+
+.onboarding-field input:focus {
+  outline: 2px solid #87a98d;
+  outline-offset: 1px;
+}
+
+.onboarding-field input::placeholder {
+  color: #a2aca5;
+}
+
+.test-id-field {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+}
+
+.test-id-field > span {
+  display: flex;
+  align-items: center;
+  padding: 0 11px;
+  border: 1px solid #dce4dd;
+  border-right: 0;
+  border-radius: 6px 0 0 6px;
+  background: #f0f4f0;
+  color: #62766a;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.test-id-field input {
+  border-radius: 0 6px 6px 0;
+}
+
+.field-hint {
+  color: #929d96;
+  font-size: 10px;
+}
+
+.onboarding-submit {
+  width: 100%;
+  min-height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 7px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--green);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.onboarding-submit:hover {
+  background: var(--deep-green);
+}
+
+.onboarding-submit span {
+  color: var(--lime);
+  font-size: 17px;
+}
+
+.demo-disclaimer {
+  margin: 15px 0 0;
+  text-align: center;
+}
+
 .welcome-row {
   display: flex;
   align-items: end;
@@ -576,6 +794,22 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .onboarding-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 38px 0 48px;
+  }
+
+  .onboarding-intro h1 {
+    max-width: 620px;
+    font-size: 34px;
+  }
+
+  .onboarding-steps {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 24px;
+  }
+
   .balance-card {
     min-height: 205px;
   }
@@ -623,6 +857,31 @@ footer {
 
   .secure-label {
     display: none;
+  }
+
+  .onboarding-layout {
+    gap: 23px;
+    padding-top: 30px;
+  }
+
+  .onboarding-intro h1 {
+    font-size: 30px;
+  }
+
+  .onboarding-steps {
+    gap: 10px;
+  }
+
+  .onboarding-step {
+    gap: 8px;
+  }
+
+  .onboarding-step small {
+    font-size: 9px;
+  }
+
+  .onboarding-panel {
+    padding: 21px;
   }
 
   .profile-name,
