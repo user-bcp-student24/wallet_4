@@ -204,10 +204,10 @@ Después del push, abrir un Pull Request en GitHub desde la rama publicada hacia
 
 | Rol | Integrante | Contribución |
 | --- | --- | --- |
-| Product Owner | Por confirmar | Prioriza el alcance W1 y define sus criterios de aceptación. |
-| Arquitectura | Por confirmar | Define componentes, límites, mocks y decisiones técnicas. |
-| AI Engineer | Por confirmar | Aplica y revisa herramientas de IA durante el desarrollo. |
-| QA y seguridad | Por confirmar | Valida el flujo, los casos de error y el uso de datos sintéticos. |
-| Presentación y control de tiempo | Por confirmar | Prepara la demo, la evidencia y la exposición. |
+| Product Owner | Luis Sanchez | Prioriza el alcance W1 y define sus criterios de aceptación. |
+| Arquitectura | Edert Ochoa | Define componentes, límites, mocks y decisiones técnicas. |
+| AI Engineer | Juan Pazos | Aplica y revisa herramientas de IA durante el desarrollo. |
+| QA y seguridad | Rodrigo Rea y Michael Teran | Valida el flujo, los casos de error y el uso de datos sintéticos. |
+| Backend | Alvaro Aguinaga | Implementa funcionalidades del backend y su integración con la API. |
 
-Los roles pueden combinarse entre integrantes. Completar los nombres y contribuciones reales del equipo antes de la entrega.
+Los roles pueden combinarse entre integrantes.
