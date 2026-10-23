@@ -40,8 +40,6 @@ La bienvenida muestra una wallet de ejemplo, saldo cero y movimientos ficticios,
 
 El diagrama presenta la arquitectura de referencia, con W1 como alcance actual y W2 como siguiente etapa técnica. Para el detalle funcional del recorrido completo —incluidos revisión KYC y pago QR— consulta [DiagramaOnBoarding_Pago.md](DiagramaOnBoarding_Pago.md). La pantalla HTML mostrada arriba no está conectada al mock ni a un backend.
 
-![Arquitectura de referencia del MVP Wallet W1 y W2](arquitectura-w1-w2.svg)
-
 ## Objetivo del MVP
 
 La meta de producto es reducir la mediana de finalización del onboarding de 8 a 3 minutos. Es un objetivo por validar después de probar la experiencia con usuarios; no es un resultado demostrado por este prototipo.
