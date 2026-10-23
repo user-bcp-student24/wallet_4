@@ -1,0 +1,168 @@
+<div class="app-shell">
+  <!-- Barra superior: marca, indicador de seguridad y perfil de ejemplo. -->
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Mi Billetera, inicio">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H20v14H6.5A2.5 2.5 0 0 1 4 16.5v-9Z" />
+          <path d="M4 8h13.5A2.5 2.5 0 0 1 20 10.5V13h-5a2.5 2.5 0 0 1 0-5h4" />
+          <path d="M15 10.5h.01" />
+        </svg>
+      </span>
+      <span>mi<span class="brand-light">billetera</span></span>
+    </a>
+
+    <div class="topbar-right">
+      <span class="secure-label">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 3 5 6v5c0 4.6 3 8.5 7 10 4-1.5 7-5.4 7-10V6l-7-3Z" />
+          <path d="m9 12 2 2 4-4" />
+        </svg>
+        Billetera segura
+      </span>
+      <button class="profile-button" type="button" aria-label="Perfil de María Fernanda">
+        <span class="avatar avatar-profile">MF</span>
+        <span class="profile-name">María Fernanda</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="m7 10 5 5 5-5" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Saludo personalizado y fecha local del día. -->
+    <section class="welcome-row" aria-labelledby="welcome-title">
+      <div>
+        <p class="eyebrow">TU DINERO, SIEMPRE CONTIGO</p>
+        <h1 id="welcome-title">¡Hola, {{ userName }}! <span aria-hidden="true">👋</span></h1>
+        <p class="welcome-subtitle">Este es el resumen de tu billetera de hoy.</p>
+      </div>
+      <p class="today">{{ today | date:'EEEE, d \'de\' MMMM' }}</p>
+    </section>
+
+    <!-- Resumen del saldo junto a los accesos rápidos de pago. -->
+    <section class="overview-grid" aria-label="Resumen y acciones de tu billetera">
+      <article class="balance-card">
+        <div class="balance-card-top">
+          <span class="balance-label">SALDO ACTUAL</span>
+          <span class="balance-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H20v14H6.5A2.5 2.5 0 0 1 4 16.5v-9Z" />
+              <path d="M4 8h13.5A2.5 2.5 0 0 1 20 10.5V13h-5a2.5 2.5 0 0 1 0-5h4" />
+              <path d="M15 10.5h.01" />
+            </svg>
+          </span>
+        </div>
+        <p class="balance-amount">{{ balance | currency:'PEN':'symbol':'1.2-2':'es-PE' }}</p>
+        <div class="balance-footer">
+          <span><span class="status-dot"></span>Saldo disponible</span>
+          <span class="wallet-number">Billetera •••• 4821</span>
+        </div>
+        <div class="balance-decoration decoration-one"></div>
+        <div class="balance-decoration decoration-two"></div>
+      </article>
+
+      <article class="actions-card">
+        <div class="card-heading">
+          <div>
+            <p class="eyebrow">¿QUÉ NECESITAS HACER?</p>
+            <h2>Accesos rápidos</h2>
+          </div>
+          <span class="heading-spark" aria-hidden="true">✦</span>
+        </div>
+        <!-- Los botones solo muestran un aviso; no procesan pagos reales. -->
+        <div class="action-list">
+          <button class="action-button" type="button" (click)="selectAction('Pagar por contacto')">
+            <span class="action-icon contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M16 20v-1.5a4.5 4.5 0 0 0-4.5-4.5h-5A4.5 4.5 0 0 0 2 18.5V20" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M19 8v6m-3-3h6" />
+              </svg>
+            </span>
+            <span class="action-copy">
+              <strong>Pagar por contacto</strong>
+              <small>Envía dinero a tus contactos</small>
+            </span>
+            <svg class="action-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="m9 18 6-6-6-6" />
+            </svg>
+          </button>
+          <button class="action-button" type="button" (click)="selectAction('Pago por QR')">
+            <span class="action-icon qr-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4z" />
+                <path d="M14 14h2v2h-2zm4 0h2m-6 4h2m2-2v4m2-4h-2" />
+              </svg>
+            </span>
+            <span class="action-copy">
+              <strong>Pago por QR</strong>
+              <small>Escanea y paga al instante</small>
+            </span>
+            <svg class="action-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="m9 18 6-6-6-6" />
+            </svg>
+          </button>
+        </div>
+      </article>
+    </section>
+
+    <!-- Historial ficticio renderizado desde la lista definida en el componente. -->
+    <section class="movements-card" aria-labelledby="movements-title">
+      <div class="movements-heading">
+        <div>
+          <p class="eyebrow">TU ACTIVIDAD</p>
+          <h2 id="movements-title">Últimos movimientos</h2>
+        </div>
+        <button class="all-movements" type="button" (click)="selectAction('Ver todos los movimientos')">
+          Ver todos
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="m9 18 6-6-6-6" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="movement-list">
+        <!-- La clave estable mantiene cada movimiento asociado a su fila. -->
+        @for (movement of movements; track movement.name) {
+          <article class="movement-row">
+            <span class="avatar" [class.incoming-avatar]="movement.incoming">{{ movement.initials }}</span>
+            <div class="movement-description">
+              <strong>{{ movement.name }}</strong>
+              <span>{{ movement.detail }}</span>
+            </div>
+            <time class="movement-date">{{ movement.date }}</time>
+            <strong class="movement-amount" [class.incoming-amount]="movement.incoming">
+              {{ movement.incoming ? '+' : '−' }}{{ movement.amount | currency:'PEN':'symbol':'1.2-2':'es-PE' }}
+            </strong>
+            <span class="movement-status" [class.received-status]="movement.incoming">
+              {{ movement.incoming ? 'Recibido' : 'Completado' }}
+            </span>
+          </article>
+        }
+      </div>
+    </section>
+
+    <!-- Aviso accesible que se muestra después de seleccionar una acción pendiente. -->
+    @if (activeAction) {
+      <div class="toast" role="status" aria-live="polite">
+        <span aria-hidden="true">✓</span>
+        <p><strong>{{ activeAction }}</strong> estará disponible próximamente.</p>
+        <button type="button" aria-label="Cerrar aviso" (click)="activeAction = ''">×</button>
+      </div>
+    }
+  </main>
+
+  <!-- Pie de página con el recordatorio de protección de datos. -->
+  <footer>
+    <span>© 2026 Mi Billetera · Una forma simple de mover tu dinero.</span>
+    <span class="footer-security">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <rect x="5" y="10" width="14" height="11" rx="2" />
+        <path d="M8 10V7a4 4 0 1 1 8 0v3m-4 5v2" />
+      </svg>
+      Tu información está protegida
+    </span>
+  </footer>
+</div>

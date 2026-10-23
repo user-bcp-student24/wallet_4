@@ -1,5 +1,8 @@
 # wallet_4
 
+Proyecto de wallet del equipo 4 para la hackaton. Incluye el contrato de la API, pruebas ejecutables desde Postman y un mock Angular del dashboard posterior al inicio de sesión. El mock usa datos de demostración y no se conecta a un backend ni autentica usuarios.
+
+Consulta [cómo ejecutar el dashboard Angular](frontend/README.md). La lógica de negocio y las operaciones de pago siguen pendientes.
 Proyecto de wallet del equipo 4 para la hackaton. Incluye una base de backend Java 21 con Quarkus, contrato OpenAPI y pruebas ejecutables desde Postman. El frontend ReactJS y la logica de negocio de la wallet estan pendientes.
 
 ## Backend Quarkus

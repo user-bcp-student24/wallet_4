@@ -1,0 +1,29 @@
+{
+  // Opciones compartidas por la aplicación Angular y sus herramientas.
+  "compileOnSave": false,
+  "compilerOptions": {
+    // El compilador de TypeScript escribe sus archivos intermedios en esta carpeta.
+    "outDir": "./dist/out-tsc",
+    // Mantiene comprobaciones estrictas para evitar errores de tipos en compilación.
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "dom"]
+  },
+  // Comprobaciones adicionales del compilador de plantillas de Angular.
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}

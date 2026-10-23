@@ -1,0 +1,56 @@
+/* Tipografías de la marca usadas por el dashboard. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+/* Paleta y valores globales compartidos por los estilos del componente. */
+:root {
+  color-scheme: light;
+  font-family: 'DM Sans', sans-serif;
+  color: #1e3029;
+  background: #f4f7f5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  --green: #145744;
+  --deep-green: #103f33;
+  --lime: #d4f08a;
+  --muted: #84918a;
+  --line: #e7ece8;
+}
+
+/* El modelo de caja uniforme evita desbordamientos al combinar tamaños y padding. */
+* {
+  box-sizing: border-box;
+}
+
+/* Estilos base y ancho mínimo para mantener utilizable la vista en móviles. */
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Los controles heredan la tipografía para mantener coherencia visual. */
+button,
+a {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+/* Indicador de foco visible para navegación por teclado. */
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #89b547;
+  outline-offset: 3px;
+}
+
+/* Contraste de la selección de texto acorde con la paleta de la aplicación. */
+::selection {
+  background: #d4f08a;
+  color: #103f33;
+}

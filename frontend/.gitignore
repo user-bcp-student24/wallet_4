@@ -1,0 +1,12 @@
+# Dependencies installed by npm; restore them from package-lock.json.
+/node_modules
+
+# Compiled bundles and test coverage are generated artifacts.
+/dist
+/coverage
+
+# Angular CLI's local build and compiler cache.
+.angular
+
+# npm diagnostic logs created when a command fails.
+npm-debug.log*

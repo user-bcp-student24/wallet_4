@@ -1,0 +1,13 @@
+{
+  // Hereda las comprobaciones comunes y define solo los ajustes propios de la app.
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    // Separa los artefactos compilados de los archivos fuente.
+    "outDir": "./out-tsc/app",
+    // No carga definiciones globales de tipos automáticamente.
+    "types": []
+  },
+  // Punto de entrada y declaraciones locales incluidos en la compilación.
+  "files": ["src/main.ts"],
+  "include": ["src/**/*.d.ts"]
+}

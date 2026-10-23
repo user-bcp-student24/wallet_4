@@ -1,0 +1,706 @@
+:host {
+  /* Permite que el shell ocupe toda la altura de la ventana. */
+  display: block;
+  min-height: 100vh;
+}
+
+/* Contenedor centrado que limita el ancho máximo del dashboard. */
+.app-shell {
+  width: min(1120px, calc(100% - 64px));
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navegación de cabecera y elementos de identidad del usuario. */
+.topbar {
+  height: 82px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand,
+.topbar-right,
+.secure-label,
+.profile-button {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  gap: 10px;
+  color: var(--deep-green);
+  font-family: Manrope, sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  text-decoration: none;
+}
+
+.brand-light {
+  color: #72907e;
+  font-weight: 600;
+}
+
+.brand-mark {
+  width: 37px;
+  height: 37px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: var(--green);
+  color: var(--lime);
+}
+
+.brand-mark svg {
+  width: 23px;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.topbar-right {
+  gap: 26px;
+}
+
+.secure-label {
+  gap: 7px;
+  color: #76857c;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.secure-label svg,
+.footer-security svg {
+  width: 17px;
+  stroke: #648474;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.profile-button {
+  gap: 9px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.profile-name {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.chevron {
+  width: 15px;
+  stroke: #85928b;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Área principal: saludo, saldo, accesos rápidos e historial. */
+main {
+  flex: 1;
+  padding: 38px 0 54px;
+}
+
+.welcome-row {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #84958b;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.55px;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2 {
+  font-family: Manrope, sans-serif;
+}
+
+h1 {
+  margin-bottom: 6px;
+  color: #20352c;
+  font-size: 29px;
+  font-weight: 800;
+  letter-spacing: -1.15px;
+}
+
+h1 span {
+  font-size: 23px;
+}
+
+.welcome-subtitle,
+.today {
+  margin-bottom: 0;
+  color: #8b9690;
+  font-size: 12px;
+}
+
+.today {
+  padding-bottom: 3px;
+  text-transform: capitalize;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 19px;
+  margin-bottom: 22px;
+}
+
+/* Superficies de las tarjetas y tarjeta destacada del saldo disponible. */
+.balance-card,
+.actions-card,
+.movements-card {
+  border: 1px solid #e9eeea;
+  border-radius: 13px;
+  box-shadow: 0 5px 18px #203b2d08;
+}
+
+.balance-card {
+  min-height: 222px;
+  position: relative;
+  overflow: hidden;
+  padding: 24px 26px 19px;
+  background: linear-gradient(125deg, #145744, #0f4638);
+  color: #fff;
+}
+
+.balance-card-top,
+.balance-footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.balance-label {
+  color: #d0e4d9;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.65px;
+}
+
+.balance-icon {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #ffffff28;
+  border-radius: 10px;
+  background: #ffffff0e;
+  color: var(--lime);
+}
+
+.balance-icon svg {
+  width: 22px;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.balance-amount {
+  position: relative;
+  z-index: 1;
+  margin: 20px 0 23px;
+  font-family: Manrope, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -1.4px;
+}
+
+.balance-footer {
+  justify-content: flex-start;
+  gap: 16px;
+  padding-top: 13px;
+  border-top: 1px solid #ffffff27;
+  color: #d7e8de;
+  font-size: 10px;
+}
+
+.balance-footer > span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #c8ee82;
+}
+
+.wallet-number {
+  color: #b7cec1;
+}
+
+.balance-decoration {
+  position: absolute;
+  border: 1px solid #ffffff12;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.decoration-one {
+  width: 200px;
+  height: 200px;
+  top: -112px;
+  right: -55px;
+}
+
+.decoration-two {
+  width: 200px;
+  height: 200px;
+  top: -89px;
+  right: -78px;
+}
+
+/* Tarjeta de acciones rápidas y controles de pago de demostración. */
+.actions-card {
+  padding: 21px 23px 13px;
+  background: #fff;
+}
+
+.card-heading,
+.movements-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-heading .eyebrow,
+.movements-heading .eyebrow {
+  margin-bottom: 5px;
+  font-size: 8px;
+}
+
+h2 {
+  margin-bottom: 0;
+  color: #283a31;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.35px;
+}
+
+.heading-spark {
+  color: #85a273;
+  font-size: 21px;
+}
+
+.action-list {
+  margin-top: 13px;
+}
+
+.action-button {
+  width: 100%;
+  min-height: 63px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 3px;
+  border: 0;
+  border-top: 1px solid #eff2ef;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: background 140ms ease, padding 140ms ease;
+}
+
+.action-button:hover {
+  padding-right: 8px;
+  padding-left: 8px;
+  border-radius: 9px;
+  background: #f7faf7;
+}
+
+.action-icon {
+  width: 37px;
+  height: 37px;
+  flex: 0 0 37px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+}
+
+.contact-icon {
+  background: #eef4e9;
+  color: #5a815c;
+}
+
+.qr-icon {
+  background: #eef2fb;
+  color: #6478a5;
+}
+
+.action-icon svg {
+  width: 21px;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.action-copy {
+  display: grid;
+  flex: 1;
+  gap: 3px;
+}
+
+.action-copy strong {
+  color: #34463c;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.action-copy small {
+  color: #97a19b;
+  font-size: 9px;
+}
+
+.action-arrow,
+.all-movements svg {
+  width: 15px;
+  flex: 0 0 15px;
+  stroke: #93a097;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Historial de transacciones y estado visual de cada movimiento. */
+.movements-card {
+  padding: 21px 24px 8px;
+  background: #fff;
+}
+
+.movements-heading {
+  margin-bottom: 12px;
+}
+
+.all-movements {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 6px 0 6px 8px;
+  border: 0;
+  background: transparent;
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.all-movements svg {
+  stroke: var(--green);
+}
+
+.movement-row {
+  min-height: 68px;
+  display: grid;
+  grid-template-columns: 38px minmax(150px, 1fr) 130px 100px 76px;
+  align-items: center;
+  gap: 11px;
+  border-top: 1px solid #eff2ef;
+}
+
+.avatar {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #f1eee5;
+  color: #997c55;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.avatar-profile {
+  width: 32px;
+  height: 32px;
+  background: #e8efe7;
+  color: #47704f;
+  font-size: 9px;
+}
+
+.incoming-avatar {
+  background: #e8f2e9;
+  color: #4e8054;
+}
+
+.movement-description {
+  display: grid;
+  gap: 4px;
+}
+
+.movement-description strong {
+  color: #34463c;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.movement-description span,
+.movement-date {
+  color: #929d96;
+  font-size: 9px;
+}
+
+.movement-amount {
+  color: #35443b;
+  font-size: 10px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.incoming-amount {
+  color: #438250;
+}
+
+.movement-status {
+  justify-self: end;
+  padding: 5px 7px;
+  border-radius: 20px;
+  background: #f2f5f2;
+  color: #738078;
+  font-size: 8px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.received-status {
+  background: #edf6ed;
+  color: #4b7e51;
+}
+
+/* Pie de página y aviso temporal de acciones aún no implementadas. */
+footer {
+  min-height: 61px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+  color: #98a29c;
+  font-size: 9px;
+}
+
+.footer-security {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-security svg {
+  width: 13px;
+}
+
+.toast {
+  position: fixed;
+  right: 26px;
+  bottom: 24px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 13px;
+  border: 1px solid #dce9dd;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 8px 30px #1c3b2c18;
+  color: #3e754d;
+  font-size: 11px;
+}
+
+.toast > span {
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #edf6ed;
+  font-weight: 700;
+}
+
+.toast p {
+  margin: 0;
+  color: #66756c;
+}
+
+.toast p strong {
+  color: #34463c;
+}
+
+.toast button {
+  margin-left: 4px;
+  padding: 0 3px;
+  border: 0;
+  background: transparent;
+  color: #829087;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* En tabletas, las tarjetas pasan a una columna y se simplifica cada fila. */
+@media (max-width: 760px) {
+  .app-shell {
+    width: min(100% - 36px, 560px);
+  }
+
+  main {
+    padding-top: 30px;
+  }
+
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .balance-card {
+    min-height: 205px;
+  }
+
+  .actions-card {
+    padding-bottom: 8px;
+  }
+
+  .movement-row {
+    grid-template-columns: 38px minmax(100px, 1fr) 90px;
+    gap: 9px;
+    padding: 9px 0;
+  }
+
+  .movement-date {
+    display: none;
+  }
+
+  .movement-status {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: start;
+    margin-top: -8px;
+  }
+
+  .movement-amount {
+    grid-column: 3;
+    grid-row: 1;
+  }
+}
+
+/* En móviles pequeños se reduce el espacio y se ocultan detalles secundarios. */
+@media (max-width: 480px) {
+  .app-shell {
+    width: calc(100% - 32px);
+  }
+
+  .topbar {
+    height: 70px;
+  }
+
+  .topbar-right {
+    gap: 10px;
+  }
+
+  .secure-label {
+    display: none;
+  }
+
+  .profile-name,
+  .chevron {
+    display: none;
+  }
+
+  .welcome-row {
+    align-items: flex-start;
+  }
+
+  .today {
+    max-width: 95px;
+    padding-top: 3px;
+    text-align: right;
+    line-height: 1.5;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h1 span {
+    font-size: 18px;
+  }
+
+  .welcome-subtitle {
+    max-width: 220px;
+    line-height: 1.5;
+  }
+
+  .balance-card {
+    min-height: 195px;
+    padding: 20px;
+  }
+
+  .balance-amount {
+    font-size: 32px;
+  }
+
+  .wallet-number {
+    font-size: 9px;
+  }
+
+  .movements-card {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .movement-row {
+    grid-template-columns: 34px minmax(85px, 1fr) 82px;
+    gap: 8px;
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .movement-description strong,
+  .movement-amount {
+    font-size: 9px;
+  }
+
+  footer {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px 0;
+  }
+}
+
+/* Respeta la preferencia del sistema por reducir animaciones y desplazamientos. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
