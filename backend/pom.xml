@@ -129,6 +129,44 @@
                             </configOptions>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>generate-wallet-http-client</id>
+                        <phase>generate-sources</phase>
+                        <goals><goal>generate</goal></goals>
+                        <configuration>
+                            <inputSpec>${project.basedir}/../client/openapi.json</inputSpec>
+                            <generatorName>java</generatorName>
+                            <library>microprofile</library>
+                            <templateDirectory>${project.basedir}/src/main/openapi-templates</templateDirectory>
+                            <output>${project.build.directory}/generated-sources/wallet-client</output>
+                            <apiPackage>pe.wallet.infrastructure.client.generated.api</apiPackage>
+                            <modelPackage>pe.wallet.infrastructure.client.generated.model</modelPackage>
+                            <invokerPackage>pe.wallet.infrastructure.client.generated</invokerPackage>
+                            <apiNameSuffix>Client</apiNameSuffix>
+                            <schemaMappings>
+                                <schemaMapping>Payment_fingerprint=java.lang.Object</schemaMapping>
+                            </schemaMappings>
+                            <generateSupportingFiles>false</generateSupportingFiles>
+                            <generateApiTests>false</generateApiTests>
+                            <generateModelTests>false</generateModelTests>
+                            <generateApiDocumentation>false</generateApiDocumentation>
+                            <generateModelDocumentation>false</generateModelDocumentation>
+                            <configOptions>
+                                <sourceFolder>src/main/java</sourceFolder>
+                                <useJakartaEe>true</useJakartaEe>
+                                <microprofileRestClientVersion>3.0</microprofileRestClientVersion>
+                                <microprofileMutiny>true</microprofileMutiny>
+                                <microprofileRegisterExceptionMapper>false</microprofileRegisterExceptionMapper>
+                                <configKey>wallet-mock</configKey>
+                                <serializationLibrary>jackson</serializationLibrary>
+                                <annotationLibrary>none</annotationLibrary>
+                                <useBeanValidation>false</useBeanValidation>
+                                <openApiNullable>false</openApiNullable>
+                                <dateLibrary>java8</dateLibrary>
+                                <hideGenerationTimestamp>true</hideGenerationTimestamp>
+                            </configOptions>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
